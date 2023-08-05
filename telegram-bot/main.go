@@ -40,7 +40,6 @@ func main() {
 				log.Printf("Unknown command: %s", update.Message.Text)
 			}
 		} else if update.Message.Text != "" && update.Message.IsCommand() == false && n == 0 {
-			// Если не команда и текстовое сообщение не пустое, обрабатываем как имя
 			name := strings.TrimSpace(update.Message.Text)
 			replyText := "Привет " + name + "!"
 			msg := tgbotapi.NewMessage(update.Message.Chat.ID, replyText)
